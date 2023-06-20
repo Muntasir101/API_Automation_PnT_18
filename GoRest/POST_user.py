@@ -40,11 +40,6 @@ def post_user():
     json_data = json.dumps(json_body, indent=4)
     print("Response Data: ", json_data)
 
-    user_id = json_body["id"]
-
-    return user_id
-
-
 """
 # it works
 for _ in range(10):
@@ -55,7 +50,7 @@ for _ in range(10):
     post_user(user_email, user_name, user_gender, user_status)
     print(f"{user_name} {user_email} {user_gender} {user_status}")
 """
-print(post_user())
+post_user()
 
 
 

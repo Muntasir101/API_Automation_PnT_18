@@ -1,9 +1,6 @@
-import json
 import os
 import random
 import string
-import json
-import requests
 from dotenv import dotenv_values
 
 import requests
@@ -46,29 +43,6 @@ def random_status():
     return status
 
 
-def new_user_id():
-    url = base_url + "/public/v2/users"
-    user_headers = {"Authorization": "Bearer " + api_token}
-    # payload
-    user_data = {
-        "name": random_name(),
-        "email": random_email(),
-        "gender": random_gender(),
-        "status": random_status()
-    }
-    response = requests.post(url, json=user_data, headers=user_headers)
-
-    json_data = response.json()
-    json_str = json.dumps(json_data, indent=4)
-    assert response.status_code == 201
-
-    # Get response body
-    json_body = response.json()
-    json_data = json.dumps(json_body, indent=4)
-
-    user_id = json_body["id"]
-
-    return user_id
 
 
-print(new_user_id())
+

@@ -1,7 +1,7 @@
 import requests
 from dotenv import dotenv_values
 import os
-from POST_user import post_user, new_user_id
+from utils import *
 
 current_file_path = os.path.abspath(__file__)
 root_directory = os.path.dirname(current_file_path)
